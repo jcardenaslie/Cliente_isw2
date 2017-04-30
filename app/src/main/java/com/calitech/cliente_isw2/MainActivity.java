@@ -9,12 +9,9 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText edtCorreo;
-    private EditText edtClave;
-
-    private Button btnIniciarSesion;
-    private Button btnRegistrarse;
-
+    private EditText edtCorreo, edtClave;
+    private Button btnIniciarSesion, btnRegistrarse;
+    private String login_correo, login_clave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                UserRegistration(v);
+            }
+        });
+        btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 UserLogin(v);
             }
         });
@@ -36,9 +39,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void UserLogin(View view){
-        startActivity(new Intent(this,Registro.class));
-    }
-    public void UserRegistration(){
+        login_correo = edtCorreo.getText().toString();
+        login_clave = edtClave.getText().toString();
+        String method = "login";
 
+        BackgroundTask backgroundTask = new BackgroundTask(this);
+        backgroundTask.execute(method, login_correo,login_clave);
+    }
+
+
+
+    public void UserRegistration(View v){
+        startActivity(new Intent(this,Registro.class));
     }
 }
