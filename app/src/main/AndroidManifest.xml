@@ -20,8 +20,9 @@
         </activity>
         <activity
             android:name=".Registro"
-            android:label="Registro"></activity>
-        <activity android:name=".Ventana_vacia"></activity>
+            android:label="Registro" />
+        <activity android:name=".Ventana_vacia" />
+        <activity android:name=".Inicio"></activity>
     </application>
 
 </manifest>

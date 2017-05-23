@@ -60,13 +60,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLoginIniciarSesion" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginIniciarSesion"
+        app:layout_constraintVertical_bias="0.102" />
 
     <Button
         android:id="@+id/btnLoginIniciarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="25dp"
         android:text="Iniciar Sesión"
         app:layout_constraintTop_toBottomOf="@+id/edtLoginClave"
         android:layout_marginRight="8dp"
@@ -74,4 +75,18 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.502" />
+
+    <Button
+        android:id="@+id/btnOmitirLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Omitir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginRegistrarse" />
 </android.support.constraint.ConstraintLayout>
