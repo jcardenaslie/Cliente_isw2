@@ -10,8 +10,9 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     private EditText edtCorreo, edtClave;
-    private Button btnIniciarSesion, btnRegistrarse;
+    private Button btnIniciarSesion, btnRegistrarse, btnOmitirLogin;
     private String login_correo, login_clave;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +20,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        edtClave = (EditText)findViewById(R.id.edtLoginClave);
-        edtCorreo = (EditText)findViewById(R.id.edtLoginCorreo);
+        edtClave = (EditText) findViewById(R.id.edtLoginClave);
+        edtCorreo = (EditText) findViewById(R.id.edtLoginCorreo);
         btnIniciarSesion = (Button) findViewById(R.id.btnLoginIniciarSesion);
         btnRegistrarse = (Button) findViewById(R.id.btnLoginRegistrarse);
+        btnOmitirLogin = (Button) findViewById(R.id.btnOmitirLogin);
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 UserLogin(v);
+            }
+
+        });
+        btnOmitirLogin.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Omitir(v);
             }
         });
     }
@@ -51,5 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void UserRegistration(View v){
         startActivity(new Intent(this,Registro.class));
+    }
+    public void Omitir(View v){
+        startActivity(new Intent(this,resultado_lugares.class));
     }
 }
